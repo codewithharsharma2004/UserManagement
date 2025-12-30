@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://usermanagement-backend-oqk8.onrender.com"
+  baseURL: "https://usermanagement-back.onrender.com"
 });
 
 api.interceptors.request.use(config => {
