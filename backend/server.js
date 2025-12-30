@@ -30,7 +30,7 @@ app.use(errorHandler);
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/user-management");
+    await mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://sharmaharshengineer_db_user:IXNgDdtutwzWt7Vx@cluster0.sprzehf.mongodb.net/user-management");
     console.log("MongoDB connected successfully");
     return true;
   } catch (error) {
