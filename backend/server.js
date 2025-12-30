@@ -30,7 +30,7 @@ app.use(errorHandler);
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://sharmaharshengineer_db_user:IXNgDdtutwzWt7Vx@cluster0.sprzehf.mongodb.net/user-management");
+    await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/user-management");
     console.log("MongoDB connected successfully");
     return true;
   } catch (error) {
@@ -49,7 +49,7 @@ const startServer = async () => {
   const dbConnected = await connectDB();
   
   if (!dbConnected) {
-    console.error("\n⚠️  WARNING: MongoDB connection failed!");
+    console.error("\n  WARNING: MongoDB connection failed!");
     console.error("Server will start but database operations will fail.");
     console.error("Please check:");
     console.error("1. MongoDB Atlas Network Access (IP whitelist)");
@@ -60,7 +60,7 @@ const startServer = async () => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     if (!dbConnected) {
-      console.log("⚠️  Note: MongoDB is not connected");
+      console.log(" Note: MongoDB is not connected");
     }
   });
 };
