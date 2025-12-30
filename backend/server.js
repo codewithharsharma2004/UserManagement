@@ -41,7 +41,7 @@ const connectDB = async () => {
 };
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Start server even if MongoDB connection fails (for debugging)
 // In production, you might want to exit if DB fails
